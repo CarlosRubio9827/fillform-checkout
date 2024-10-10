@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Cambia Color de Fondo",
+  "version": "1.0",
+  "description": "Cambia el color de fondo de la página actual.",
+  "background": {
+    "service_worker": "src/content.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "./popup.html"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/chance.min.js"]
+    }
+  ]
+}

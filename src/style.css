@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    /* width: 200px; */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: 200px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .desciption {
+    font-size: 16px;
+    text-align: center;
+  }
+  #fillButton {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  #fillButton:hover {
+    background-color: #45a049;
+  }
+
+  .select {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+/* 
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  } */
