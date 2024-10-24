@@ -10,7 +10,7 @@ document.getElementById("fillButton").addEventListener("click", () => {
     chrome.scripting.executeScript(
       {
         target: { tabId: tabs[0].id },
-        files: ["./src/chance.min.js","./src/content.js", "./src/example.js"],
+        files: ["./src/chance.min.js","./src/app.js", "./src/generateDataPassenger.js", "./src/getElements.js", "./src/fillFormFields.js"],
         // func: fillForm,
       },
       () => {

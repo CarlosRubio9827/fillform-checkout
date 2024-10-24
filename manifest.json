@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Cambia el color de fondo de la página actual.",
   "background": {
-    "service_worker": "src/content.js",
+    "service_worker": "src/app.js",
     "type": "module"
   },
   "action": {
