@@ -8,7 +8,7 @@ function triggerInputChange(element) {
   element.dispatchEvent(changeEvent);
 }
 
-function fillFormFields(data, elements, product) {
+function fillFormFields(data, elements, product, email) {
   console.log("Data: ", data);
   console.log("Elements: ", elements);
   for (let i = 0; i < data.length; i++) {
@@ -40,21 +40,25 @@ function fillFormFields(data, elements, product) {
     // elements[i].firstName.focus();
     elements[i].firstName.value = data[i].firstName;
     elements[i].lastName.value = data[i].lastName;
-    elements[i].email.value = data[i].email;
+    elements[i].email.value = email || data[i].email;
     elements[i].documentType.value = "PP";
     elements[i].documentNumber.value = data[i].documentNumber;
     elements[i].phoneNumber.value = data[i].phoneNumber;
-    elements[i].birthdate.value = data[i].birthdate;
-    elements[i].expirationDate.value = data[i].expirationDate;
+    if (product != "activities") {
+      elements[i].birthdate.value = data[i].birthdate;
+      elements[i].expirationDate.value = data[i].expirationDate;
+
+      triggerInputChange(elements[i].birthdate);
+      triggerInputChange(elements[i].expirationDate);
+    }
     // elements[i].nationality.value = data[i].country;
-    if(product == "flights"){
+    if (product == "flights") {
       elements[i].nationality2[i].value = data[i].country;
       elements[i].passportNumber.value = data[i].documentNumber;
       elements[i].expirationPassportDate.value = data[i].expirationDate;
-      triggerInputChange(elements[i].nationality2[i])
+      triggerInputChange(elements[i].nationality2[i]);
       triggerInputChange(elements[i].passportNumber);
       triggerInputChange(elements[i].expirationPassportDate);
-      
     }
 
     triggerInputChange(elements[i].firstName);
@@ -64,9 +68,6 @@ function fillFormFields(data, elements, product) {
     triggerInputChange(elements[i].documentNumber);
     triggerInputChange(elements[i].phoneNumber);
     // triggerInputChange(elements[i].nationality);
-
-    triggerInputChange(elements[i].birthdate);
-    triggerInputChange(elements[i].expirationDate);
   }
 
   elements[0].nameFacturation.value = data[0].firstName;

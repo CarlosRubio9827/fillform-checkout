@@ -6,21 +6,9 @@ function countPassengers() {
   return numberOfPassengers.length;
 }
 
-function fillForm(frente, producto) {
-  //   const xpathResult = document.evaluate(
-  //     '//input[@name="search"]',
-  //     document,
-  //     null,
-  //     XPathResult.FIRST_ORDERED_NODE_TYPE,
-  //     null
-  //   );
-  //   const inputElement = xpathResult.singleNodeValue;
+function fillForm(frente, producto, email) {
+  console.log("Email: ", email);
 
-  //   // Comprobar si el elemento existe y agregar un valor
-  //   if (inputElement) {
-  //     inputElement.value = "Nuevo valor"; // Cambia 'Nuevo valor' por el texto que desees
-  //   }
-  //   document.body.style.backgroundColor = "lightblue"; // Cambia el color aquí
   if (frente == "bac") {
     const numberOfPassengers = countPassengers();
     const passengersData = [];
@@ -32,9 +20,9 @@ function fillForm(frente, producto) {
       dataPassengerElements = getElements(numberOfPassengers);
     }
 
-    console.log("Procutos:  =============",producto)
+    console.log("Procutos:  =============", producto);
 
-    fillFormFields(passengersData, dataPassengerElements, producto);
+    fillFormFields(passengersData, dataPassengerElements, producto, email);
     console.log(dataPassengerElements);
     console.log(passengersData);
 
@@ -44,8 +32,6 @@ function fillForm(frente, producto) {
     alert("Selecciona una opcion");
   }
 }
-
-
 
 // chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 //   if (request.action === "fillForm") {

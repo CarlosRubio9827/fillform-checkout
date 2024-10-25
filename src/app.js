@@ -6,8 +6,9 @@ function countPassengers() {
   return numberOfPassengers.length;
 }
 
-function fillForm(frente, producto) {
- 
+function fillForm(frente, producto, email) {
+  console.log("Email: ", email);
+
   if (frente == "bac") {
     const numberOfPassengers = countPassengers();
     const passengersData = [];
@@ -19,9 +20,9 @@ function fillForm(frente, producto) {
       dataPassengerElements = getElements(numberOfPassengers);
     }
 
-    console.log("Procutos:  =============",producto)
+    console.log("Procutos:  =============", producto);
 
-    fillFormFields(passengersData, dataPassengerElements, producto);
+    fillFormFields(passengersData, dataPassengerElements, producto, email);
     console.log(dataPassengerElements);
     console.log(passengersData);
 
@@ -31,8 +32,6 @@ function fillForm(frente, producto) {
     alert("Selecciona una opcion");
   }
 }
-
-
 
 // chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 //   if (request.action === "fillForm") {

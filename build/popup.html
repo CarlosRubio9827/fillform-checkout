@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cambia Color de Fondo</title>
-  <link rel="stylesheet" href="./src/style.css">
-</head>
-<body>
+  <head>
+    <title>Cambia Color de Fondo</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 class="title">Llenar formulario</h1>
-        <select name="frente" class="select" id="frente">
-            <option value="bac">Mi Viaje - BAC</option>
-            <option value="destinoJet">Destino Jet</option>
-        </select>
-        <select name="producto" class="select" id="producto">
-            <option value="flights">Vuelos</option>
-            <option value="cars">Autos</option>
-            <option value="hotels">Hoteles</option>
-            <option value="disney">Disney</option>
-            <option value="assitances">Asistencias</option>
-            <option value="activities">Actividades</option>
-        </select>
-        <button id="fillButton">Llenar formulario</button>
+      <h1 class="title">Llenar formulario</h1>
+      <input type="email" id="email" name="email" class="input" placeholder="Email" />
+      <select name="frente" class="select" id="frente">
+        <option value="bac">Mi Viaje - BAC</option>
+        <option value="destinoJet">Destino Jet</option>
+      </select>
+      <select name="producto" class="select" id="producto">
+        <option value="flights">Vuelos</option>
+        <option value="cars">Autos</option>
+        <option value="hotels">Hoteles</option>
+        <option value="disney">Disney</option>
+        <option value="assitances">Asistencias</option>
+        <option value="activities">Actividades</option>
+      </select>
+      <button id="fillButton">Llenar formulario</button>
     </div>
     <!-- <script type="module" src="./src/content.js"></script> -->
     <!-- <script type="module" src="popup.js"></script> -->
-    <script src="popup.bundle.js"></script> 
-</body>
+    <script src="popup.bundle.js"></script>
+  </body>
 </html>
