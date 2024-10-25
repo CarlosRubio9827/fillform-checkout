@@ -2,13 +2,10 @@ function countPassengers() {
   const numberOfPassengers = document.getElementsByClassName(
     "passenger-data__card"
   );
-  console.log("numberofPassengers: ", numberOfPassengers);
   return numberOfPassengers.length;
 }
 
 function fillForm(frente, producto, email) {
-  console.log("Email: ", email);
-
   if (frente == "bac") {
     const numberOfPassengers = countPassengers();
     const passengersData = [];
@@ -20,13 +17,7 @@ function fillForm(frente, producto, email) {
       dataPassengerElements = getElements(numberOfPassengers);
     }
 
-    console.log("Procutos:  =============", producto);
-
     fillFormFields(passengersData, dataPassengerElements, producto, email);
-    console.log(dataPassengerElements);
-    console.log(passengersData);
-
-    // console.log(passengersElements[0].children[0].children[1]);
   } else if (frente == "destinoJet") {
   } else {
     alert("Selecciona una opcion");

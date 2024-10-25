@@ -26,7 +26,6 @@ function getPassengerElement(index) {
     const genderM = document.querySelector(`#gender0${index}`);
     const genderF = document.querySelector(`#gender1${index}`);
     const birthdate = document.querySelector(`#birthDate${index}`);
-    console.log("birthdate============: ", birthdate);
     const email = document.querySelector(`#email${index}`);
     const phoneNumber = document.querySelector(`#phone${index}`);
     const country = document.querySelector(`#country`);
@@ -41,7 +40,9 @@ function getPassengerElement(index) {
       `#expiredDatePassport${index}`
     );
     const nationality = document.querySelector(`#nationality`);
-    const nationality2 = document.querySelectorAll('select[formcontrolname="nationality"]')
+    const nationality2 = document.querySelectorAll(
+      'select[formcontrolname="nationality"]'
+    );
 
     const nameFacturation = document.querySelector(`#names`);
     const lastNameFacturation = document.querySelector(`#lastNames`);
@@ -76,7 +77,7 @@ function getPassengerElement(index) {
       documentNumberFacturation,
       phoneNumberFacturation,
       countryFacturation,
-      addressFacturation
+      addressFacturation,
     };
   } catch (error) {
     throw new Error(

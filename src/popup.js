@@ -30,6 +30,5 @@ document.getElementById("fillButton").addEventListener("click", () => {
 
 function fillFormFromPopup(frente, producto, email) {
   // Ejecutar desde popup, pero contenido en content.js
-  console.log("Hola 3: ");
   fillForm(frente, producto, email);
 }
