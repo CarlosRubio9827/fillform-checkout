@@ -1,7 +1,7 @@
 function getElements(passengersNumbers, frente) {
   try {
     const elementosDePasajeros = [];
-console.log("getElements: ")
+    console.log("getElements: ");
     console.log(passengersNumbers, frente);
     for (let i = 0; i < passengersNumbers; i++) {
       const elementoDePasajero = getPassengerElement(i, frente);
@@ -19,7 +19,6 @@ console.log("getElements: ")
 
 function getPassengerElement(index, frente) {
   try {
-
     console.log("getPassengerElement: ");
     console.log(index, frente);
     if (frente == "bac") {
@@ -82,7 +81,6 @@ function getPassengerElement(index, frente) {
         addressFacturation,
       };
     } else if (frente == "destinoJet") {
-
       const gender = document.querySelector(`#gender__${index}`);
       const firstName = document.querySelector(`#firstName__${index}`);
       const lastName = document.querySelector(`#lastName__${index}`);
@@ -91,8 +89,10 @@ function getPassengerElement(index, frente) {
         `#documentNumber__${index}`
       );
       const birthDate = document.querySelector(`#birthDate__${index}`);
-      const nationality = document.querySelectorAll(`#dropdown-select .multiselect-dropdown div .dropdown-btn span .dropdown-multiselect__caret`)[index];
-      console.log("Nationality: ",nationality);
+      const nationality = document.querySelectorAll(
+        `#dropdown-select .multiselect-dropdown div .dropdown-btn span .dropdown-multiselect__caret`
+      )[index];
+      console.log("Nationality: ", nationality);
       const passportNumber = document.querySelector(`#passport__${index}`);
       const expirationDate = document.querySelector(
         `#expirationDate__${index}`
@@ -133,6 +133,7 @@ function getPassengerElement(index, frente) {
       const titularInstallmentsTC = document.querySelector(
         `input.credit-card__container-input[name="installments"][formcontrolname="installments"]`
       );
+      const cardSection = document.querySelectorAll(`.accordion-header h3`);
 
       return {
         gender,
@@ -161,6 +162,7 @@ function getPassengerElement(index, frente) {
         titularExpirationYearTC,
         titularSecurityCodeTC,
         titularInstallmentsTC,
+        cardSection,
       };
     }
   } catch (error) {

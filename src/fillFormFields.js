@@ -21,6 +21,9 @@ function fillFormFields(data, elements, product, frente, email) {
     elements[i].documentType.value = "PP";
     elements[i].documentNumber.value = data[i].documentNumber;
     if (product != "activities") {
+      elements[i].birthDate.click()
+      triggerInputChange(elements[i].birthDate);
+      debugger
       elements[i].birthDate.value = data[i].birthdate;
       elements[i].expirationDate.value = data[i].expirationDate;
 
@@ -63,6 +66,10 @@ function fillFormFields(data, elements, product, frente, email) {
     triggerInputChange(elements[i].documentNumber);
     // triggerInputChange(elements[i].nationality);
   }
+  if(frente == "destinoJet"){
+    elements[0].cardSection[1].click();
+    triggerInputChange(elements[0].cardSection[1]);
+  }
 
   elements[0].addressFacturation.value = data[0].address;
   triggerInputChange(elements[0].addressFacturation);
@@ -75,6 +82,8 @@ function fillFormFields(data, elements, product, frente, email) {
     elements[0].countryFacturation.value = data[0].country;
     triggerInputChange(elements[0].countryFacturation);
   } else if (frente == "destinoJet") {
+    elements[0].cardSection[2].click();
+    triggerInputChange(elements[0].cardSection[2]);
     elements[0].titularNameTC.value = data[0].firstName;
     elements[0].titularLastNameTC.value = data[0].lastName;
     elements[0].titularDocumentTypeTC.value = "PP";
