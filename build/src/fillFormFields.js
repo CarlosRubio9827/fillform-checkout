@@ -21,14 +21,35 @@ function fillFormFields(data, elements, product, frente, email) {
     elements[i].documentType.value = "PP";
     elements[i].documentNumber.value = data[i].documentNumber;
     if (product != "activities") {
-      elements[i].birthDate.click()
+      
+      elements[i].birthDate.click();
       triggerInputChange(elements[i].birthDate);
-      debugger
-      elements[i].birthDate.value = data[i].birthdate;
-      elements[i].expirationDate.value = data[i].expirationDate;
+      const yearElement = document.querySelector(
+        `.ngb-dp-navigation-select select[title="Select year"]`
+      );
 
-      triggerInputChange(elements[i].birthDate);
+      yearElement.value = data[i].birthdate.split("/")[2];
+      triggerInputChange(yearElement);
+      const dayElement = document.querySelector(`.ngb-dp-week .ngb-dp-day div`);
+      dayElement.click();
+      triggerInputChange(dayElement);
+
+      // elements[i].birthDate.value = data[i].birthdate;
+// debugger
+      elements[i].expirationDate.click();
       triggerInputChange(elements[i].expirationDate);
+      const yearElement2 = document.querySelector(
+        `.ngb-dp-navigation-select select[title="Select year"]`
+      );
+
+      yearElement2.value = data[i].expirationDate.split("/")[2];
+      triggerInputChange(yearElement2);
+      // console.log("data[i].expirationDate.split("/")[2]: ",yearElement2.value);
+      const dayElement2 = document.querySelector(`.ngb-dp-week .ngb-dp-day div`);
+      dayElement2.click();
+      triggerInputChange(dayElement2);
+
+
     }
     // elements[i].nationality.value = data[i].country;
     if (product == "flights") {
@@ -66,7 +87,7 @@ function fillFormFields(data, elements, product, frente, email) {
     triggerInputChange(elements[i].documentNumber);
     // triggerInputChange(elements[i].nationality);
   }
-  if(frente == "destinoJet"){
+  if (frente == "destinoJet") {
     elements[0].cardSection[1].click();
     triggerInputChange(elements[0].cardSection[1]);
   }

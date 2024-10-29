@@ -1,8 +1,6 @@
 function getElements(passengersNumbers, frente) {
   try {
     const elementosDePasajeros = [];
-    console.log("getElements: ");
-    console.log(passengersNumbers, frente);
     for (let i = 0; i < passengersNumbers; i++) {
       const elementoDePasajero = getPassengerElement(i, frente);
       elementosDePasajeros.push(elementoDePasajero);
@@ -19,8 +17,6 @@ function getElements(passengersNumbers, frente) {
 
 function getPassengerElement(index, frente) {
   try {
-    console.log("getPassengerElement: ");
-    console.log(index, frente);
     if (frente == "bac") {
       const firstName = document.querySelector(`#firstName${index}`);
       const lastName = document.querySelector(`#lastName${index}`);
@@ -92,7 +88,6 @@ function getPassengerElement(index, frente) {
       const nationality = document.querySelectorAll(
         `#dropdown-select .multiselect-dropdown div .dropdown-btn span .dropdown-multiselect__caret`
       )[index];
-      console.log("Nationality: ", nationality);
       const passportNumber = document.querySelector(`#passport__${index}`);
       const expirationDate = document.querySelector(
         `#expirationDate__${index}`

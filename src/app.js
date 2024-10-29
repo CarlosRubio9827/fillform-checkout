@@ -23,7 +23,6 @@ function fillForm(frente, producto, email) {
     // let passengerElement = document.querySelector(`#passengerForm_${i}`);
   }
   dataPassengerElements = getElements(numberOfPassengers, frente);
-  console.log("Data Passenger Elements: ", dataPassengerElements);
   fillFormFields(passengersData, dataPassengerElements, producto, frente, email);
   // } else if (frente == "destinoJet") {
   // } else {
