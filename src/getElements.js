@@ -91,7 +91,7 @@ function getPassengerElement(index, frente) {
         `#documentNumber__${index}`
       );
       const birthDate = document.querySelector(`#birthDate__${index}`);
-      const nationality = document.querySelectorAll(`#dropdown-select .multiselect-dropdown div span span`)[index];
+      const nationality = document.querySelectorAll(`#dropdown-select .multiselect-dropdown div .dropdown-btn span .dropdown-multiselect__caret`)[index];
       console.log("Nationality: ",nationality);
       const passportNumber = document.querySelector(`#passport__${index}`);
       const expirationDate = document.querySelector(

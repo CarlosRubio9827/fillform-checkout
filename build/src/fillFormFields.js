@@ -38,18 +38,19 @@ function fillFormFields(data, elements, product, frente, email) {
         // elements[i].nationality[i].value = data[i].country;
 
         elements[i].nationality.click();
-        // triggerInputChange(elements[i].nationality);
-        const inputNationality = document.querySelector(
+        // debugger
+        triggerInputChange(elements[i].nationality);
+        // debugger
+        const inputNationality = document.querySelectorAll(
           `input[placeholder="Buscar" ][aria-label="multiselect-search"]`
         );
-        console.log("inputNationality: ", inputNationality);
-        inputNationality.value = "colombia";
-        triggerInputChange(inputNationality);
-        const optionNationality = document.querySelector(
+        inputNationality[i].value = "colombia";
+        triggerInputChange(inputNationality[i]);
+        const optionNationality = document.querySelectorAll(
           'li.multiselect-item-checkbox:has(input[aria-label="Colombia"])'
         );
-        optionNationality.click();
-        // triggerInputChange(optionNationality);
+        optionNationality[i].click();
+        triggerInputChange(optionNationality[i]);
       }
 
       elements[i].passportNumber.value = data[i].documentNumber;
@@ -78,7 +79,7 @@ function fillFormFields(data, elements, product, frente, email) {
     elements[0].titularLastNameTC.value = data[0].lastName;
     elements[0].titularDocumentTypeTC.value = "PP";
     elements[0].titularDocumentTC.value = data[0].documentNumber;
-    elements[0].titularNumberTC.value = "411111111111111";
+    elements[0].titularNumberTC.value = "4111111111111111";
     elements[0].titularExpirationMonthTC.value = "12";
     elements[0].titularExpirationYearTC.value = "2025";
     elements[0].titularSecurityCodeTC.value = "123";

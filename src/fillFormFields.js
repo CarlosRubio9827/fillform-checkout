@@ -38,18 +38,19 @@ function fillFormFields(data, elements, product, frente, email) {
         // elements[i].nationality[i].value = data[i].country;
 
         elements[i].nationality.click();
-        // triggerInputChange(elements[i].nationality);
-        const inputNationality = document.querySelector(
+        // debugger
+        triggerInputChange(elements[i].nationality);
+        // debugger
+        const inputNationality = document.querySelectorAll(
           `input[placeholder="Buscar" ][aria-label="multiselect-search"]`
         );
-        console.log("inputNationality: ", inputNationality);
-        inputNationality.value = "colombia";
-        triggerInputChange(inputNationality);
-        const optionNationality = document.querySelector(
+        inputNationality[i].value = "colombia";
+        triggerInputChange(inputNationality[i]);
+        const optionNationality = document.querySelectorAll(
           'li.multiselect-item-checkbox:has(input[aria-label="Colombia"])'
         );
-        optionNationality.click();
-        // triggerInputChange(optionNationality);
+        optionNationality[i].click();
+        triggerInputChange(optionNationality[i]);
       }
 
       elements[i].passportNumber.value = data[i].documentNumber;
