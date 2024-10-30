@@ -14,31 +14,19 @@ function countPassengers(frente) {
 
 function fillForm(frente, producto, email) {
   const numberOfPassengers = countPassengers(frente);
-  // if (frente == "bac") {
+  
   const passengersData = [];
 
   let dataPassengerElements = [];
   for (let i = 0; i < numberOfPassengers; i++) {
     passengersData.push(generateRandomPassengerData());
-    // let passengerElement = document.querySelector(`#passengerForm_${i}`);
   }
   dataPassengerElements = getElements(numberOfPassengers, frente);
-  console.log("Data Passenger Elements: ", dataPassengerElements);
-  fillFormFields(passengersData, dataPassengerElements, producto, frente, email);
-  // } else if (frente == "destinoJet") {
-  // } else {
-  //   alert("Selecciona una opcion");
-  // }
+  fillFormFields(
+    passengersData,
+    dataPassengerElements,
+    producto,
+    frente,
+    email
+  );
 }
-
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-//   if (request.action === "fillForm") {
-//     fillForm(request.frente, request.producto);
-//   }
-// });
-
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-//   if (request.action === "fillForm") {
-//     fillForm(request.frente, request.producto);
-//   }
-// });

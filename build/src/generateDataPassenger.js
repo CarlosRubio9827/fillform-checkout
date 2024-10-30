@@ -25,7 +25,6 @@ function generateRandomPassengerData() {
     birthdate: birthdate,
     email: firstName.toLowerCase() + lastName.toLowerCase() + "@ultragroup.com",
     phoneNumber: chance.phone({ formatted: false }),
-    // country: chance.country(),
     country: "CR",
     address: chance.address(),
     documentType: "Passport",

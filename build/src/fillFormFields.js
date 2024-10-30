@@ -12,16 +12,16 @@ function fillFormFields(data, elements, product, frente, email) {
   for (let i = 0; i < data.length; i++) {
     elements[i].firstName.value = data[i].firstName;
     elements[i].lastName.value = data[i].lastName;
-    // if(frente == "bac"){
     elements[i].email.value = email || data[i].email;
     elements[i].phoneNumber.value = data[i].phoneNumber;
     triggerInputChange(elements[i].email);
     triggerInputChange(elements[i].phoneNumber);
-    // }
     elements[i].documentType.value = "PP";
     elements[i].documentNumber.value = data[i].documentNumber;
     if (product != "activities") {
       
+
+
       elements[i].birthDate.click();
       triggerInputChange(elements[i].birthDate);
       const yearElement = document.querySelector(
@@ -34,8 +34,6 @@ function fillFormFields(data, elements, product, frente, email) {
       dayElement.click();
       triggerInputChange(dayElement);
 
-      // elements[i].birthDate.value = data[i].birthdate;
-// debugger
       elements[i].expirationDate.click();
       triggerInputChange(elements[i].expirationDate);
       const yearElement2 = document.querySelector(
@@ -44,14 +42,12 @@ function fillFormFields(data, elements, product, frente, email) {
 
       yearElement2.value = data[i].expirationDate.split("/")[2];
       triggerInputChange(yearElement2);
-      // console.log("data[i].expirationDate.split("/")[2]: ",yearElement2.value);
       const dayElement2 = document.querySelector(`.ngb-dp-week .ngb-dp-day div`);
       dayElement2.click();
       triggerInputChange(dayElement2);
 
 
     }
-    // elements[i].nationality.value = data[i].country;
     if (product == "flights") {
       if (frente == "bac") {
         elements[i].nationality2[i].value = data[i].country;
@@ -59,12 +55,9 @@ function fillFormFields(data, elements, product, frente, email) {
         elements[i].expirationPassportDate.value = data[i].expirationDate;
         triggerInputChange(elements[i].expirationPassportDate);
       } else if (frente == "destinoJet") {
-        // elements[i].nationality[i].value = data[i].country;
 
         elements[i].nationality.click();
-        // debugger
         triggerInputChange(elements[i].nationality);
-        // debugger
         const inputNationality = document.querySelectorAll(
           `input[placeholder="Buscar" ][aria-label="multiselect-search"]`
         );
@@ -85,7 +78,6 @@ function fillFormFields(data, elements, product, frente, email) {
     triggerInputChange(elements[i].lastName);
     triggerInputChange(elements[i].documentType);
     triggerInputChange(elements[i].documentNumber);
-    // triggerInputChange(elements[i].nationality);
   }
   if (frente == "destinoJet") {
     elements[0].cardSection[1].click();

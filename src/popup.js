@@ -14,7 +14,6 @@ document.getElementById("fillButton").addEventListener("click", () => {
           "./src/getElements.js",
           "./src/fillFormFields.js",
         ],
-        // func: fillForm,
       },
       () => {
         chrome.scripting.executeScript({
@@ -29,6 +28,5 @@ document.getElementById("fillButton").addEventListener("click", () => {
 });
 
 function fillFormFromPopup(frente, producto, email) {
-  // Ejecutar desde popup, pero contenido en content.js
   fillForm(frente, producto, email);
 }

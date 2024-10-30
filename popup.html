@@ -7,7 +7,13 @@
   <body>
     <div class="container">
       <h1 class="title">Llenar formulario</h1>
-      <input type="email" id="email" name="email" class="input" placeholder="Email" />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="select input"
+        placeholder="Ingresa tu Email"
+      />
       <select name="frente" class="select" id="frente">
         <option value="bac">Mi Viaje - BAC</option>
         <option value="destinoJet">Destino Jet</option>
@@ -20,10 +26,8 @@
         <option value="assitances">Asistencias</option>
         <option value="activities">Actividades</option>
       </select>
-      <button id="fillButton">Llenar</button>
+      <button id="fillButton" class="select">Llenar</button>
     </div>
-    <!-- <script type="module" src="./src/content.js"></script> -->
-    <!-- <script type="module" src="popup.js"></script> -->
     <script src="popup.bundle.js"></script>
   </body>
 </html>
