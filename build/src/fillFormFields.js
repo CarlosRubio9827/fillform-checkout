@@ -3,11 +3,9 @@ function triggerInputChange(element) {
   const inputEvent = new Event("input", { bubbles: true });
   // El atributo bubbles: true indica que el evento debe burbujear hacia arriba a través del DOM. Cuando un evento "burbujea", se propaga desde el elemento donde se originó hacia los elementos padre, permitiendo que otros controladores de eventos en esos elementos padres también puedan interceptarlo.
   element.dispatchEvent(inputEvent);
-  console.log("trigger input event: ", element);
 
   const changeEvent = new Event("change", { bubbles: true });
   element.dispatchEvent(changeEvent);
-  console.log("trigger change event: ", element);
 }
 const ProductTypes = {
   CARS: "cars",
@@ -59,9 +57,14 @@ function fillFormFields(data, elements, product, frente, email) {
       dayElement.click();
       triggerInputChange(dayElement);
     }
-    console.log("Frente: ",frente)
-    console.log("Product: ",product)
-    if (!(frente == "destinoJet" && (product == "activities" || product == "hotels" || product == "assistances"))) {
+    if (
+      !(
+        frente == "destinoJet" &&
+        (product == "activities" ||
+          product == "hotels" ||
+          product == "assistances")
+      )
+    ) {
       elements[i].expirationDate.click();
       triggerInputChange(elements[i].expirationDate);
 
@@ -153,5 +156,4 @@ function fillFormFields(data, elements, product, frente, email) {
   triggerInputChange(elements[0].documentTypeFacturation);
   triggerInputChange(elements[0].documentNumberFacturation);
   triggerInputChange(elements[0].phoneNumberFacturation);
-  console.log("Formulario llenado!");
 }
