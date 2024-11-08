@@ -1,4 +1,5 @@
 function formatDate(date) {
+  console.log(date);
   return date
     .split("/")
     .map((num) => (num.length === 1 ? "0" + num : num))
@@ -17,6 +18,8 @@ function generateRandomPassengerData() {
       year: chance.year({ min: 2025, max: 2030 }),
     })
   );
+  console.log("birthdate: ", birthdate);
+  console.log("expirationDate: ", expirationDate);
 
   const randomUser = {
     firstName: firstName,

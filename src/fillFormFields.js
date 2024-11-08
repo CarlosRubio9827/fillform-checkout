@@ -7,46 +7,78 @@ function triggerInputChange(element) {
   const changeEvent = new Event("change", { bubbles: true });
   element.dispatchEvent(changeEvent);
 }
+const ProductTypes = {
+  CARS: "cars",
+  HOTELS: "hotels",
+  ACTIVITIES: "activities",
+  ASSISTANCES: "assistances",
+};
 
 function fillFormFields(data, elements, product, frente, email) {
   for (let i = 0; i < data.length; i++) {
     elements[i].firstName.value = data[i].firstName;
-    elements[i].lastName.value = data[i].lastName;
+    triggerInputChange(elements[i].firstName);
+
+    if (Object.values(ProductTypes).includes(product)) {
+      elements[i].lastName.value = "Prueba";
+      triggerInputChange(elements[i].lastName);
+    } else {
+      elements[i].lastName.value = data[i].lastName;
+      triggerInputChange(elements[i].lastName);
+    }
     elements[i].email.value = email || data[i].email;
-    elements[i].phoneNumber.value = data[i].phoneNumber;
     triggerInputChange(elements[i].email);
+    elements[i].phoneNumber.value = data[i].phoneNumber;
     triggerInputChange(elements[i].phoneNumber);
     elements[i].documentType.value = "PP";
-    elements[i].documentNumber.value = data[i].documentNumber;
+    triggerInputChange(elements[i].documentType);
+    if (frente == "bac") {
+      const documentNumber = document.querySelector(`#fieldDocumentNumber${i}`);
+      documentNumber.value = data[i].documentNumber;
+      triggerInputChange(documentNumber);
+    } else {
+      elements[i].documentNumber.value = data[i].documentNumber;
+      triggerInputChange(elements[i].documentNumber);
+    }
+
     if (product != "activities") {
-      
-
-
       elements[i].birthDate.click();
       triggerInputChange(elements[i].birthDate);
+
       const yearElement = document.querySelector(
         `.ngb-dp-navigation-select select[title="Select year"]`
       );
 
       yearElement.value = data[i].birthdate.split("/")[2];
       triggerInputChange(yearElement);
-      const dayElement = document.querySelector(`.ngb-dp-week .ngb-dp-day div`);
+      const dayElement = document.querySelector(
+        `.ngb-dp-week .ngb-dp-day div:not(.text-muted)`
+      );
       dayElement.click();
       triggerInputChange(dayElement);
-
+    }
+    if (
+      !(
+        frente == "destinoJet" &&
+        (product == "activities" ||
+          product == "hotels" ||
+          product == "assistances")
+      )
+    ) {
       elements[i].expirationDate.click();
       triggerInputChange(elements[i].expirationDate);
+
       const yearElement2 = document.querySelector(
         `.ngb-dp-navigation-select select[title="Select year"]`
       );
-
       yearElement2.value = data[i].expirationDate.split("/")[2];
       triggerInputChange(yearElement2);
-      const dayElement2 = document.querySelector(`.ngb-dp-week .ngb-dp-day div`);
+
+      const dayElement2 = document.querySelector(
+        `.ngb-dp-week .ngb-dp-day div:not(.text-muted)`
+      );
       dayElement2.click();
       triggerInputChange(dayElement2);
-
-
     }
     if (product == "flights") {
       if (frente == "bac") {
@@ -55,7 +87,6 @@ function fillFormFields(data, elements, product, frente, email) {
         elements[i].expirationPassportDate.value = data[i].expirationDate;
         triggerInputChange(elements[i].expirationPassportDate);
       } else if (frente == "destinoJet") {
-
         elements[i].nationality.click();
         triggerInputChange(elements[i].nationality);
         const inputNationality = document.querySelectorAll(
@@ -73,11 +104,6 @@ function fillFormFields(data, elements, product, frente, email) {
       elements[i].passportNumber.value = data[i].documentNumber;
       triggerInputChange(elements[i].passportNumber);
     }
-
-    triggerInputChange(elements[i].firstName);
-    triggerInputChange(elements[i].lastName);
-    triggerInputChange(elements[i].documentType);
-    triggerInputChange(elements[i].documentNumber);
   }
   if (frente == "destinoJet") {
     elements[0].cardSection[1].click();
@@ -87,7 +113,11 @@ function fillFormFields(data, elements, product, frente, email) {
   elements[0].addressFacturation.value = data[0].address;
   triggerInputChange(elements[0].addressFacturation);
   elements[0].nameFacturation.value = data[0].firstName;
-  elements[0].lastNameFacturation.value = data[0].lastName;
+  if (Object.values(ProductTypes).includes(product)) {
+    elements[0].lastNameFacturation.value = "Prueba";
+  } else {
+    elements[0].lastNameFacturation.value = data[0].lastName;
+  }
   elements[0].documentTypeFacturation.value = "PP";
   elements[0].documentNumberFacturation.value = data[0].documentNumber;
   elements[0].phoneNumberFacturation.value = data[0].phoneNumber;
@@ -98,7 +128,11 @@ function fillFormFields(data, elements, product, frente, email) {
     elements[0].cardSection[2].click();
     triggerInputChange(elements[0].cardSection[2]);
     elements[0].titularNameTC.value = data[0].firstName;
-    elements[0].titularLastNameTC.value = data[0].lastName;
+    if (Object.values(ProductTypes).includes(product)) {
+      elements[0].titularLastNameTC.value = "Prueba";
+    } else {
+      elements[0].titularLastNameTC.value = data[0].lastName;
+    }
     elements[0].titularDocumentTypeTC.value = "PP";
     elements[0].titularDocumentTC.value = data[0].documentNumber;
     elements[0].titularNumberTC.value = "4111111111111111";
