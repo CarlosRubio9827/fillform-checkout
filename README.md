@@ -22,7 +22,7 @@ La extensión utiliza la API de Chrome para interactuar con la página actual y 
 2. Abre la carpeta del proyecto en tu editor de código favorito
 3. Ejecuta el comando `npm install` para instalar las dependencias
 4. Ejecuta el comando `npm run build` para compilar el código
-5. Carga la extensión en Chrome siguiendo las instrucciones de la documentación de Chrome
+5. Carga la extensión en Chrome desde la carpeta `build` siguiendo las instrucciones de la documentación de la guía: [INSTALAR EXTENSIONES DESEMPAQUETADAS](https://davidpob99.github.io/blog/2017/08/20/instalar-extensiones-desempaquetadas.html#google-chrome---chromium)
 
 ## Uso
 -----
@@ -36,11 +36,14 @@ La extensión utiliza la API de Chrome para interactuar con la página actual y 
 
 El código fuente de la extensión se encuentra en la carpeta `src`. La estructura del código es la siguiente:
 
-* `popup.html`: archivo html que se muestra en la interfaz de usuario.
-* `app.js`: archivo principal de la extensión que se ejecuta en el contexto de la página actual.
-* `popup.js`: archivo que se ejecuta en el contexto de la interfaz de usuario.
-* `style.css`: archivo de estilos para la interfaz de usuario.
-* `fillFormFields.js`: archivo que contiene la lógica para llenar los campos del formulario.
+* `popup.html`: archivo HTML que define la interfaz de usuario.
+* `popup.js`: archivo JavaScript que maneja las interacciones en el contexto de la interfaz de usuario.
+* `chance.min.js`: biblioteca utilizada para generar datos aleatorios.
+* `style.css`: archivo de estilos que da formato y diseño a la interfaz de usuario.
+* `app.js`: archivo principal de la extensión que coordina y organiza las llamadas a los diferentes módulos.
+* `generateDataPassenger.js`: archivo que implementa la lógica para generar datos aleatorios de pasajeros.
+* `getElements.js`: archivo que contiene la lógica para obtener elementos del DOM relacionados con los pasajeros.
+* `fillFormFields.js`: archivo que maneja la lógica para completar automáticamente los campos del formulario.
 
 ## Contribuciones
 --------------
