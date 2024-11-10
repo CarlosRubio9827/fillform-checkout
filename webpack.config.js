@@ -6,6 +6,6 @@ module.exports = {
     filename: 'popup.bundle.js',  // Archivo generado
     path: path.resolve(__dirname, 'build'),
   },
-  mode: 'production',
+  mode: 'development',
   devtool: 'inline-source-map',
 };
