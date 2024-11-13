@@ -4,7 +4,7 @@
   "description": "",
   "main": "content.js",
   "scripts": {
-    "build": "mkdirp build/src && cp -r src/* build/src/ && cp manifest.json popup.html build/ && npx webpack"
+    "build": "mkdirp build/src && mkdirp build/icons && cp -r src/* build/src/ && cp icons/* build/icons/ && cp manifest.json popup.html build/ && npx webpack"
   },
   "devDependencies": {
     "mkdirp": "^1.0.4",
