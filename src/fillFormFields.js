@@ -65,20 +65,25 @@ function fillFormFields(data, elements, product, frente, email) {
           product == "assistances")
       )
     ) {
-      elements[i].expirationDate.click();
-      triggerInputChange(elements[i].expirationDate);
-
+      if (elements[i].expirationDate) {
+        elements[i].expirationDate.click();
+        triggerInputChange(elements[i].expirationDate);
+      }
       const yearElement2 = document.querySelector(
         `.ngb-dp-navigation-select select[title="Select year"]`
       );
-      yearElement2.value = data[i].expirationDate.split("/")[2];
-      triggerInputChange(yearElement2);
+      if (yearElement2) {
+        yearElement2.value = data[i].expirationDate.split("/")[2];
+        triggerInputChange(yearElement2);
+      }
 
       const dayElement2 = document.querySelector(
         `.ngb-dp-week .ngb-dp-day div:not(.text-muted)`
       );
-      dayElement2.click();
-      triggerInputChange(dayElement2);
+      if (dayElement2) {
+        dayElement2.click();
+        triggerInputChange(dayElement2);
+      }
     }
     if (product == "flights") {
       if (frente == "bac") {
@@ -100,9 +105,10 @@ function fillFormFields(data, elements, product, frente, email) {
         optionNationality[i].click();
         triggerInputChange(optionNationality[i]);
       }
-
-      elements[i].passportNumber.value = data[i].documentNumber;
-      triggerInputChange(elements[i].passportNumber);
+      if (elements[i].passportNumber) {
+        elements[i].passportNumber.value = data[i].documentNumber;
+        triggerInputChange(elements[i].passportNumber);
+      }
     }
   }
   if (frente == "destinoJet") {
