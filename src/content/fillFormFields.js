@@ -105,7 +105,6 @@ function fillFormFields(data, elements, product, frente, email) {
         optionNationality[i].click();
         triggerInputChange(optionNationality[i]);
       }
-      console.log("elements[i].passportNumber: ",elements[i].passportNumber);
       if (elements[i].passportNumber) {
         elements[i].passportNumber.value = data[i].documentNumber;
         triggerInputChange(elements[i].passportNumber);
@@ -135,27 +134,27 @@ function fillFormFields(data, elements, product, frente, email) {
     elements[0].cardSection[2].click();
     triggerInputChange(elements[0].cardSection[2]);
     elements[0].titularNameTC.value = data[0].firstName;
-    if (Object.values(ProductTypes).includes(product)) {
-      elements[0].titularLastNameTC.value = "Prueba";
-    } else {
-      elements[0].titularLastNameTC.value = data[0].lastName;
-    }
-    elements[0].titularDocumentTypeTC.value = "PP";
-    elements[0].titularDocumentTC.value = data[0].documentNumber;
-    elements[0].titularNumberTC.value = "4111111111111111";
-    elements[0].titularExpirationMonthTC.value = "12";
-    elements[0].titularExpirationYearTC.value = "2025";
-    elements[0].titularSecurityCodeTC.value = "123";
-    elements[0].titularInstallmentsTC.value = "1";
     triggerInputChange(elements[0].titularNameTC);
-    triggerInputChange(elements[0].titularLastNameTC);
-    triggerInputChange(elements[0].titularDocumentTypeTC);
-    triggerInputChange(elements[0].titularDocumentTC);
-    triggerInputChange(elements[0].titularNumberTC);
-    triggerInputChange(elements[0].titularExpirationMonthTC);
-    triggerInputChange(elements[0].titularExpirationYearTC);
-    triggerInputChange(elements[0].titularSecurityCodeTC);
-    triggerInputChange(elements[0].titularInstallmentsTC);
+    // if (Object.values(ProductTypes).includes(product)) {
+    //   elements[0].titularLastNameTC.value = "Prueba";
+    // } else {
+    //   elements[0].titularLastNameTC.value = data[0].lastName;
+    // }
+    // elements[0].titularDocumentTypeTC.value = "PP";
+    // elements[0].titularDocumentTC.value = data[0].documentNumber;
+    // elements[0].titularNumberTC.value = "4111111111111111";
+    // elements[0].titularExpirationMonthTC.value = "12";
+    // elements[0].titularExpirationYearTC.value = "2025";
+    // elements[0].titularSecurityCodeTC.value = "123";
+    // elements[0].titularInstallmentsTC.value = "1";
+    // triggerInputChange(elements[0].titularLastNameTC);
+    // triggerInputChange(elements[0].titularDocumentTypeTC);
+    // triggerInputChange(elements[0].titularDocumentTC);
+    // triggerInputChange(elements[0].titularNumberTC);
+    // triggerInputChange(elements[0].titularExpirationMonthTC);
+    // triggerInputChange(elements[0].titularExpirationYearTC);
+    // triggerInputChange(elements[0].titularSecurityCodeTC);
+    // triggerInputChange(elements[0].titularInstallmentsTC);
   }
 
   triggerInputChange(elements[0].nameFacturation);

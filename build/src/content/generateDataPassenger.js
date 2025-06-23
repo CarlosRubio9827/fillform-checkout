@@ -1,5 +1,4 @@
 function formatDate(date) {
-  console.log(date);
   return date
     .split("/")
     .map((num) => (num.length === 1 ? "0" + num : num))
@@ -18,8 +17,6 @@ function generateRandomPassengerData() {
       year: chance.year({ min: 2025, max: 2030 }),
     })
   );
-  console.log("birthdate: ", birthdate);
-  console.log("expirationDate: ", expirationDate);
 
   const randomUser = {
     firstName: firstName,
@@ -27,14 +24,13 @@ function generateRandomPassengerData() {
     gender: chance.gender(),
     birthdate: birthdate,
     email: firstName.toLowerCase() + lastName.toLowerCase() + "@ultragroup.com",
-    phoneNumber: chance.phone({ formatted: false }),
-    country: "CR",
+    phoneNumber: "315" + chance.integer({ min: 100000, max: 999999 }).toString(),
+    country: "CO",
     address: chance.address(),
     documentType: "Passport",
-    documentNumber: chance
-      .integer({ min: 100000000, max: 999999999 })
-      .toString(),
+    documentNumber: chance.integer({ min: 10000000, max: 99999999 }).toString(),
     expirationDate: expirationDate,
   };
+  console.log("randomUser: ", randomUser);
   return randomUser;
 }

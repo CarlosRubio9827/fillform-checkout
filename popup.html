@@ -6,27 +6,45 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">Llenar formulario</h1>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="select input"
-        placeholder="Ingresa tu Email"
-      />
-      <select name="frente" class="select" id="frente">
-        <option value="destinoJet">Destino Jet</option>
-        <option value="bac">Mi Viaje - BAC</option>
-      </select>
-      <select name="producto" class="select" id="producto">
-        <option value="flights">Vuelos</option>
-        <option value="cars">Autos</option>
-        <option value="hotels">Hoteles</option>
-        <option value="disney">Disney</option>
-        <option value="assistances">Asistencias</option>
-        <option value="activities">Actividades</option>
-      </select>
-      <button id="fillButton" class="select">Llenar</button>
+      <h1 class="title" id="title">Llenar formulario</h1>
+      <button id="addUser">Agregar Usuario</button>
+      <div class="container-addUser">
+        <input type="text" placeholder="Ingresa tu Nombre" id="name" />
+        <input type="text" placeholder="Ingresa tu Apellido" id="lastName" />
+        <input
+          type="text"
+          placeholder="Ingresa tu Documento"
+          id="documentNumber"
+        />
+        <input type="text" placeholder="Ingresa tu Telefono" id="phoneNumber" />
+        <div class="container-addUser__buttons">
+          <button id="saveButton" class="container-addUser__button">Agregar</button>
+          <button id="cancelButton" class="container-addUser__button">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="container-fill">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="select input"
+          placeholder="Ingresa tu Email"
+        />
+        <select name="frente" class="select" id="frente">
+          <option value="destinoJet">Destino Jet</option>
+          <option value="bac">Mi Viaje - BAC</option>
+        </select>
+        <select name="producto" class="select" id="producto">
+          <option value="flights">Vuelos</option>
+          <option value="cars">Autos</option>
+          <option value="hotels">Hoteles</option>
+          <option value="disney">Disney</option>
+          <option value="assistances">Asistencias</option>
+          <option value="activities">Actividades</option>
+        </select>
+        <button id="fillButton" class="select">Llenar</button>
+      </div>
     </div>
     <script src="popup.bundle.js"></script>
   </body>

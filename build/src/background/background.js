@@ -14,7 +14,7 @@ function countPassengers(frente) {
 
 function fillForm(frente, producto, email) {
   const numberOfPassengers = countPassengers(frente);
-  
+
   const passengersData = [];
 
   let dataPassengerElements = [];
@@ -30,3 +30,5 @@ function fillForm(frente, producto, email) {
     email
   );
 }
+
+// window.fillForm = fillForm;

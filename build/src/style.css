@@ -1,42 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
-    /* width: 200px; */
+  font-family: Arial, sans-serif;
+  /* width: 200px; */
 }
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    width: 200px;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .input{
-    border: 1px solid #ccc;
-  }
-  
-  #fillButton {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-  }
-  #fillButton:hover {
-    background-color: #45a049;
-  }
 
-  .select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 10px;
-  }
-  
+.container-addUser {
+  display: none;
+}
+
+.container-fill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+.container-fill.inactive {
+  display: none;
+}
+.container-addUser {
+  display: none;
+}
+
+#addUser{
+  display: block;
+}
+
+#addUser.inactive{
+  display: none;
+}
+
+.container-addUser.active {
+  display: block;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input {
+  border: 1px solid #ccc;
+}
+
+#fillButton {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+#fillButton:hover {
+  background-color: #45a049;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
